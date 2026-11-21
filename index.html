@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AJS Aluminium Interiors | Modern Aluminium Interior Solutions</title>
+<meta name="description" content="AJS Aluminium Interiors: aluminium partitions, doors and windows, glass partitions, modular kitchens, wardrobes and custom aluminium works.">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="assets/logo.png">
+<link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--hero-img:url("assets/hero-bg.jpg");--bg:#0B0B0B;--bg2:#171717;--gold:#C8A45D;--text:#F5F5F5;--mute:#A5A5A5;--line:rgba(200,164,93,.22);--h:'Playfair Display',Georgia,serif;--b:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+html,body{overflow-x:hidden;overflow-x:clip}
+body{background:var(--bg);color:var(--text);font:400 16px/1.7 var(--b)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.alt{background:var(--bg2)}
+h1,h2,h3{font-family:var(--h);font-weight:500;line-height:1.2}
+h2{font-size:clamp(1.9rem,4vw,2.75rem);margin-bottom:16px}
+.lead{color:var(--mute);max-width:62ch}
+.head{margin-bottom:48px}
+.ico{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-block;padding:14px 28px;border:1px solid var(--gold);font:500 .9rem var(--b);letter-spacing:.04em;cursor:pointer;transition:background .25s,color .25s;background:none;color:var(--text)}
+.btn.fill{background:var(--gold);color:#0B0B0B}
+.btn.fill:hover{background:#d8b56e}
+.btn:not(.fill):hover{background:var(--gold);color:#0B0B0B}
+[hidden]{display:none!important}
+
+/* loader */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:100;display:grid;place-items:center;transition:opacity .5s}
+#loader span{width:36px;height:36px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .9s linear infinite}
+#loader.done{opacity:0;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* nav */
+header{padding-top:env(safe-area-inset-top,0px);position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,11,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;font:500 1.05rem var(--h);letter-spacing:.03em}
+.brand img,.mono{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.mono{display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);font:600 .8rem var(--h)}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav a{font-size:.88rem;color:var(--mute);transition:color .2s}
+nav a:hover,nav a.on{color:var(--text)}
+.wa{border:1px solid var(--gold);padding:9px 18px;color:var(--gold)!important}
+.wa:hover{background:var(--gold);color:#0B0B0B!important}
+.burger{display:none;background:none;border:0;color:var(--text);width:44px;height:44px;cursor:pointer}
+.burger svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6}
+@media(max-width:900px){
+ .burger{display:block}
+ nav ul{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);display:none;padding:8px 24px 20px;align-items:stretch}
+ nav ul.open{display:flex}
+ nav li a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+ .wa{text-align:center;margin-top:14px}
+}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative;isolation:isolate;overflow:hidden;background:#0B0B0B}
+.hero::before{content:"";position:absolute;inset:-40px;z-index:-3;background:var(--hero-img) center/cover no-repeat;filter:blur(28px) brightness(.42) saturate(1.1)}
+.hero::after{content:"";position:absolute;top:0;bottom:0;right:0;aspect-ratio:1/1;max-width:100%;z-index:-2;background:var(--hero-img) center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%)}
+.hero .wrap{position:relative;z-index:1;text-shadow:0 2px 14px rgba(0,0,0,.7);max-width:none;margin:0;width:100%;text-align:left;padding:0 clamp(20px,3vw,48px)}
+@media(max-width:900px){
+ .hero{display:block;min-height:0;padding:calc(100vw - 36px) 0 56px}
+ .hero::after{top:0;bottom:auto;left:0;right:0;width:100%;height:100vw;aspect-ratio:auto;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
+}
+.brand img{width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:#0c0c0c}
+.card a{display:inline-block;padding:11px 0}
+nav a{padding:10px 0}
+@media(min-width:901px){nav ul{gap:22px}nav a{padding:12px 4px}}
+footer li a{display:inline-block;padding:6px 0}
+.hero .cta .btn{min-height:48px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:15ch;margin-bottom:20px}
+.hero .sub{font:500 1.15rem var(--h);color:var(--gold);margin-bottom:18px}
+.hero p.d{color:#cfcfcf;max-width:56ch;margin-bottom:36px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.js .hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em}
+.js .hero h1 .w>span{display:inline-block;transform:translateY(115%);transition:transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i)*90ms + 250ms)}
+.js .hero .sub,.js .hero .d,.js .hero .cta{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .hero .sub{transition-delay:1.1s}.js .hero .d{transition-delay:1.35s}.js .hero .cta{transition-delay:1.6s}
+.js .hero.go h1 .w>span{transform:none}
+.js .hero.go .sub,.js .hero.go .d,.js .hero.go .cta{opacity:1;transform:none}
+
+/* about */
+#about{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(440px,44vw,620px);display:flex;align-items:center}
+#about::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/about-before-after.jpg") center 55%/cover no-repeat}
+#about::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,11,11,.92) 0%,rgba(11,11,11,.78) 45%,rgba(11,11,11,.4) 100%)}
+#about .wrap{width:100%}
+#about h2,#about .lead{text-shadow:0 2px 16px rgba(0,0,0,.8)}
+#about .lead{color:#dcdcdc}
+.about{grid-template-columns:minmax(0,640px)!important}
+@media(max-width:800px){#about::after{background:linear-gradient(180deg,rgba(11,11,11,.8),rgba(11,11,11,.72))}#about::before{background-position:55% center}}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about .panel{border:1px solid var(--line);padding:48px;text-align:center;background:var(--bg)}
+.about .panel img,.about .panel .mono{margin:0 auto 20px;height:96px;font-size:1.5rem}
+.about .panel .mono{width:96px}
+.about .panel img{width:96px;border-radius:50%;border:1px solid var(--gold)}
+.about .panel p{font:italic 500 1.2rem var(--h);color:var(--gold)}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:36px}}
+
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.07);padding:36px 30px;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card h3{font-size:1.3rem;margin:20px 0 10px}
+.card p{color:var(--mute);font-size:.94rem;margin-bottom:18px}
+.card a{color:var(--gold);font-size:.88rem;font-weight:500;border-bottom:1px solid transparent}
+.card a:hover{border-color:var(--gold)}
+@media(max-width:960px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid3{grid-template-columns:1fr}}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.shot{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2);border:0;cursor:pointer;display:block;width:100%;color:var(--text);text-align:left}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.shot:hover img{transform:scale(1.05)}
+.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85));opacity:0;transform:translateY(8px);transition:.3s}
+.shot:hover .cap,.shot:focus-visible .cap{opacity:1;transform:none}
+.cap b{display:block;font:500 1.05rem var(--h)}.cap small{color:var(--gold)}
+@media(hover:none){.shot .cap{opacity:1;transform:none}}
+.empty{grid-column:1/-1;border:1px dashed var(--line);padding:64px 24px;text-align:center;color:var(--mute)}
+.empty h3{color:var(--text);font-size:1.3rem;margin-bottom:8px}
+@media(max-width:960px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}}
+.morewrap{text-align:center;margin-top:40px}
+.allpanel{position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;transform:translateX(100%);visibility:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s .5s;padding-bottom:64px}
+.allpanel.open{transform:none;visibility:visible;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.allbar{position:sticky;top:0;z-index:2;background:rgba(11,11,11,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:calc(14px + env(safe-area-inset-top,0px)) 24px 14px;display:flex;align-items:center;gap:20px}
+.allbar h2{font-size:1.4rem;margin:0}
+.back{background:none;border:1px solid var(--gold);color:var(--text);padding:9px 18px;font:500 .85rem var(--b);cursor:pointer;transition:.2s}
+.back:hover{background:var(--gold);color:#0B0B0B}
+.allpanel .wrap{padding-top:36px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.filters button{background:none;border:1px solid rgba(255,255,255,.18);color:var(--mute);padding:9px 18px;font:500 .85rem var(--b);cursor:pointer;transition:.2s}
+.filters button:hover{color:var(--text);border-color:var(--gold)}
+.filters button[aria-pressed=true]{background:var(--gold);color:#0B0B0B;border-color:var(--gold)}
+dialog img{max-width:90vw}
+dialog .lb-nav{top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.25);border-radius:50%;font-size:1.6rem;line-height:1;z-index:2}
+dialog .lb-nav:hover{border-color:var(--gold);color:var(--gold)}
+dialog .lb-prev{left:14px;right:auto}dialog .lb-next{right:14px}
+@media(max-width:560px){.gal{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.shot .cap{padding:30px 10px 10px}.cap b{font-size:.82rem}.cap small{font-size:.7rem}.filters button{padding:8px 13px;font-size:.8rem}dialog .lb-nav{width:40px;height:40px}dialog .lb-prev{left:6px}dialog .lb-next{right:6px}}
+dialog{background:transparent;border:0;max-width:94vw;max-height:94vh;margin:auto;color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.92)}
+dialog img{max-height:80vh;margin:0 auto;object-fit:contain}
+dialog p{text-align:center;margin-top:12px}
+dialog button{position:fixed;top:16px;right:20px;background:none;border:0;color:var(--text);font-size:2rem;cursor:pointer;width:44px;height:44px}
+
+/* why */
+#why{position:relative;overflow:hidden;isolation:isolate;background:#0B0B0B}
+#why .bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.js [data-r]{opacity:0;transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.js [data-r=up]{transform:translateY(46px)}
+.js [data-r=left]{transform:translateX(-70px)}
+.js [data-r=right]{transform:translateX(70px)}
+.js [data-r].in{opacity:1;transform:none}
+.js [data-r].done{opacity:1;transform:none;transition:transform .3s,border-color .3s;transition-delay:0s}
+.js .card[data-r].done:hover{transform:translateY(-4px)}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.1)}}
+#why .bgvid{animation:kb 22s ease-in-out infinite alternate}
+@media(max-width:700px){.js [data-r=left]{transform:translateX(-36px)}.js [data-r=right]{transform:translateX(36px)}}
+#why::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,11,11,.78),rgba(11,11,11,.62) 50%,rgba(11,11,11,.8))}
+#why .head h2,#why .why h3{text-shadow:0 2px 14px rgba(0,0,0,.6)}
+#why .why div{border-top-color:rgba(200,164,93,.45)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px}
+.why div{border-top:1px solid var(--line);padding-top:24px}
+.why h3{font-size:1.15rem;margin:14px 0 0}
+@media(max-width:900px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why{grid-template-columns:1fr}}
+
+/* location + contact */
+.loc{display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+.map{min-height:360px;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;text-align:center;color:var(--mute);padding:24px;overflow:hidden}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(.6) invert(.92) contrast(.9)}
+.info{display:flex;flex-direction:column;gap:20px;justify-content:center}
+.info dt{color:var(--gold);font-size:.85rem;font-weight:500}
+.info dd{color:var(--text);margin-bottom:6px}
+.ph{color:var(--mute);font-style:italic}
+@media(max-width:800px){.loc{grid-template-columns:1fr}}
+#contact{position:relative;overflow:hidden;isolation:isolate}
+#contact::before{content:"";position:absolute;top:0;bottom:0;left:0;width:56%;background:url("assets/contact-bg.jpg") center/cover no-repeat;z-index:-2}
+#contact::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,11,11,.38) 0%,rgba(11,11,11,.55) 32%,rgba(23,23,23,.9) 48%,#171717 55%)}
+#contact h2,#contact .lead{text-shadow:0 2px 16px rgba(0,0,0,.75)}
+#contact .lead{color:#d8d8d8}
+@media(max-width:860px){#contact::before{width:100%}#contact::after{background:linear-gradient(180deg,rgba(11,11,11,.55) 0%,rgba(11,11,11,.84) 100%)}}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:64px}
+form{display:grid;gap:18px}
+label{font-size:.85rem;color:var(--mute);display:grid;gap:6px}
+input,select,textarea{background:var(--bg2);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:13px 14px;font:inherit;width:100%}
+input:focus,textarea:focus,select:focus{border-color:var(--gold);outline:none}
+textarea{min-height:130px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.locrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:-4px}
+.locbtn{background:none;border:1px solid var(--gold);color:var(--text);padding:10px 16px;font:500 .85rem var(--b);cursor:pointer;min-height:44px;transition:.2s}
+.locbtn:hover{background:var(--gold);color:#0B0B0B}
+.locbtn:disabled{opacity:.6;cursor:wait}
+#locStatus{font-size:.82rem;color:var(--mute);flex:1 1 200px}
+#addr{min-height:88px}
+#otherWrap:not([hidden]){animation:fadein .4s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(-6px)}}
+#msg{font-size:.9rem;min-height:1.4em}
+.sent{border:1px solid var(--line);background:rgba(11,11,11,.55);padding:18px;display:grid;gap:12px}
+.sent p{margin:0;color:var(--text);font-size:.92rem}
+.sent textarea{min-height:120px;font-size:.85rem;color:#d8d8d8}
+.sentbtns{display:flex;gap:12px;flex-wrap:wrap}
+.sentbtns .btn{text-align:center;min-height:46px;color:var(--text);text-decoration:none!important}
+.sentbtns .btn.fill{color:#0B0B0B}
+.fnote{font-size:.8rem;color:var(--mute);margin-top:-6px}
+#msg a{color:var(--gold);text-decoration:underline}
+@media(max-width:860px){.contact{grid-template-columns:1fr;gap:40px}.row{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:56px 0 28px;background:var(--bg)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+footer h4{font:500 1rem var(--h);margin-bottom:14px}
+footer li{list-style:none;margin-bottom:8px;color:var(--mute);font-size:.9rem}
+footer a:hover{color:var(--gold)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);color:var(--mute);font-size:.82rem}
+@media(max-width:860px){.foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}}
+@media(max-width:520px){.foot{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-r],.js .hero .sub,.js .hero .d,.js .hero .cta{transform:none!important}.js .hero h1 .w>span{transform:none!important;transition:none!important}#why .bgvid{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="loader" aria-hidden="true"><span></span></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-part" viewBox="0 0 34 34"><rect x="5" y="4" width="8" height="26"/><rect x="21" y="4" width="8" height="26"/><path d="M13 17h8"/></symbol>
+ <symbol id="i-door" viewBox="0 0 34 34"><rect x="6" y="4" width="22" height="26"/><path d="M17 4v26M6 17h22"/></symbol>
+ <symbol id="i-glass" viewBox="0 0 34 34"><rect x="5" y="5" width="24" height="24"/><path d="M12 29L29 12M5 22l17-17"/></symbol>
+ <symbol id="i-kitchen" viewBox="0 0 34 34"><rect x="4" y="6" width="26" height="8"/><rect x="4" y="18" width="26" height="12"/><path d="M17 18v12M10 10h2M22 10h2"/></symbol>
+ <symbol id="i-ward" viewBox="0 0 34 34"><rect x="6" y="4" width="22" height="27"/><path d="M17 4v27M14 16v3M20 16v3"/></symbol>
+ <symbol id="i-custom" viewBox="0 0 34 34"><path d="M6 28l16-16M20 8l6 6M24 4l6 6-4 4-6-6z"/><path d="M6 28l2-6 4 4z"/></symbol>
+ <symbol id="i-tv" viewBox="0 0 34 34"><rect x="4" y="6" width="26" height="17"/><path d="M11 29h12M17 23v6"/></symbol>
+ <symbol id="i-pooja" viewBox="0 0 34 34"><path d="M17 4l10 8H7z"/><path d="M9 12v17M25 12v17M5 29h24M14 29v-9a3 3 0 016 0v9"/></symbol>
+ <symbol id="i-counter" viewBox="0 0 34 34"><path d="M4 13h26v5H4z"/><path d="M7 18v11M27 18v11M7 29h20M11 8h12"/></symbol>
+ <symbol id="i-gem" viewBox="0 0 34 34"><path d="M9 6h16l6 8-14 16L3 14z"/><path d="M3 14h28"/></symbol>
+ <symbol id="i-pen" viewBox="0 0 34 34"><path d="M5 29l3-9L23 5l6 6-15 15z"/><path d="M20 8l6 6"/></symbol>
+ <symbol id="i-hammer" viewBox="0 0 34 34"><path d="M6 12l8-8 8 8-3 3-5-5-2 2 5 5-4 4zM18 20l11 9"/></symbol>
+ <symbol id="i-eye" viewBox="0 0 34 34"><path d="M2 17C8 8 26 8 32 17 26 26 8 26 2 17z"/><circle cx="17" cy="17" r="4"/></symbol>
+ <symbol id="i-check" viewBox="0 0 34 34"><circle cx="17" cy="17" r="12"/><path d="M11 17l4 4 8-9"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 34 34"><path d="M17 29S4 21 4 12a7 7 0 0113-3 7 7 0 0113 3c0 9-13 17-13 17z"/></symbol>
+</svg>
+
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="AJS Aluminium Interiors home">
+   <img src="assets/logo.png" alt="AJS logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mono',textContent:'AJS'}))">
+   <span>AJS ALUMINIUM INTERIORS</span>
+  </a>
+  <nav aria-label="Main">
+   <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 26 26"><path d="M3 7h20M3 13h20M3 19h20"/></svg></button>
+   <ul id="menu">
+    <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="wrap">
+  <h1>Transforming Spaces. Creating Experiences.</h1>
+  <p class="sub">Your Vision, Our Expertise. Beautifully Designed.</p>
+  <p class="d">We specialize in modern aluminium interiors, combining innovative designs, premium materials and exceptional craftsmanship to transform your spaces into something extraordinary.</p>
+  <div class="cta"><a class="btn fill" href="#projects">Explore Our Projects</a><a class="btn" href="#contact">Get a Free Quote</a></div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap about">
+  <div>
+   <h2>Designing Spaces with Excellence.</h2>
+   <p class="lead">At AJS Aluminium Interiors, we believe that great design is about more than appearance. It is about creating spaces that combine beauty, functionality and durability. We bring ideas to life through quality materials, innovative aluminium solutions and attention to every detail.</p>
+  </div>
+ </div>
+</section>
+
+<section id="services" class="alt">
+ <div class="wrap">
+  <div class="head"><h2>Our Services</h2><p class="lead">Aluminium solutions for homes, offices and commercial spaces, made to your measurements.</p></div>
+  <div class="grid3">
+   <article class="card"><svg class="ico"><use href="#i-part"/></svg><h3>Aluminium Partitions</h3><p>Slim, durable partitions that divide space cleanly for offices, homes and shops.</p><a href="#contact" data-svc="Aluminium Partitions">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-door"/></svg><h3>Aluminium Doors &amp; Windows</h3><p>Strong, low-maintenance frames with a precise, modern finish.</p><a href="#contact" data-svc="Aluminium Doors & Windows">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-glass"/></svg><h3>Glass Partitions</h3><p>Open, light-filled layouts that still separate and define each area.</p><a href="#contact" data-svc="Glass Partitions">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-kitchen"/></svg><h3>Modular Kitchens</h3><p>Moisture-resistant aluminium kitchens planned around how you cook.</p><a href="#contact" data-svc="Modular Kitchens">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-ward"/></svg><h3>Aluminium Wardrobes</h3><p>Termite-proof wardrobes with clean lines and custom internal layouts.</p><a href="#contact" data-svc="Aluminium Wardrobes">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-tv"/></svg><h3>TV Units</h3><p>Stylish TV wall units with display shelves, storage and lighting.</p><a href="#contact" data-svc="TV Units">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-pooja"/></svg><h3>Pooja Units</h3><p>Elegant pooja cabinets with laser-cut designs and warm lighting.</p><a href="#contact" data-svc="Pooja Units">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-counter"/></svg><h3>Reception &amp; Office Counters</h3><p>Neat, durable counters with clean finishes for offices and shops.</p><a href="#contact" data-svc="Reception & Office Counters">Learn more</a></article>
+   <article class="card"><svg class="ico"><use href="#i-custom"/></svg><h3>Custom Aluminium Works</h3><p>Have something specific in mind? We design and fabricate it to fit.</p><a href="#contact" data-svc="Custom Aluminium Works">Learn more</a></article>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="head"><h2>Our Work Speaks for Itself.</h2><p class="lead">Selected projects by AJS Aluminium Interiors.</p></div>
+  <div class="gal" id="gallery"></div>
+  <div class="morewrap"><button class="btn fill" id="viewAll" type="button">View All Projects</button></div>
+ </div>
+</section>
+
+<section id="why" class="alt">
+ <video class="bgvid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="assets/why-poster.jpg"></video>
+ <div class="wrap">
+  <div class="head"><h2>Why Choose Us?</h2></div>
+  <div class="why">
+   <div><svg class="ico"><use href="#i-gem"/></svg><h3>Premium Quality Materials</h3></div>
+   <div><svg class="ico"><use href="#i-pen"/></svg><h3>Modern &amp; Customized Designs</h3></div>
+   <div><svg class="ico"><use href="#i-hammer"/></svg><h3>Professional Workmanship</h3></div>
+   <div><svg class="ico"><use href="#i-eye"/></svg><h3>Attention to Detail</h3></div>
+   <div><svg class="ico"><use href="#i-check"/></svg><h3>Quality Finishing</h3></div>
+   <div><svg class="ico"><use href="#i-heart"/></svg><h3>Customer Satisfaction</h3></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact" class="alt">
+ <div class="wrap contact">
+  <div>
+   <h2>Let's Build Something Extraordinary.</h2>
+   <p class="lead">Tell us about your space and we will get back to you with a free quote.</p>
+  </div>
+  <form id="form" novalidate>
+   <div class="row">
+    <label>Name<input name="name" required autocomplete="name"></label>
+    <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+   </div>
+   <label>Email<input name="email" type="email" autocomplete="email"></label>
+   <label>Service
+    <select name="service"><option>Aluminium Partitions</option><option>Aluminium Doors &amp; Windows</option><option>Glass Partitions</option><option>Modular Kitchens</option><option>Aluminium Wardrobes</option><option>TV Units</option><option>Pooja Units</option><option>Reception &amp; Office Counters</option><option>Dressing &amp; Storage Units</option><option>Custom Aluminium Works</option><option value="Other">Other (tell us what you need)</option></select>
+   </label>
+   <label id="otherWrap" hidden>Tell us which service you need<input name="otherService" maxlength="80" placeholder="For example: aluminium bathroom door"></label>
+   <label>Address
+    <textarea name="address" id="addr" rows="3" autocomplete="street-address" placeholder="Type your address, or use the button below"></textarea>
+   </label>
+   <div class="locrow"><button type="button" class="locbtn" id="locBtn">Use my current location</button><span id="locStatus" role="status"></span></div>
+   <label>Message<textarea name="message" required></textarea></label>
+   <button class="btn fill" type="submit">Send enquiry</button>
+   <p class="fnote">Your enquiry will open in WhatsApp with the message ready to send to us.</p>
+   <div id="msg" role="status"></div>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <div>
+    <a class="brand" href="#home"><img src="assets/logo.png" alt="AJS logo" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mono',textContent:'AJS'}))"><span>AJS ALUMINIUM INTERIORS</span></a>
+    <p class="lead" style="margin-top:14px;font-size:.9rem">Transforming Spaces. Creating Experiences.</p>
+    <ul id="social" style="margin-top:14px"></ul>
+   </div>
+   <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h4>Services</h4><ul><li>Aluminium Partitions</li><li>Doors &amp; Windows</li><li>Glass Partitions</li><li>Modular Kitchens</li><li>Wardrobes</li><li>TV Units</li><li>Pooja Units</li><li>Counters</li></ul></div>
+  </div>
+  <p class="copy">&copy; <span id="yr"></span> AJS Aluminium Interiors. All rights reserved.</p>
+ </div>
+</footer>
+
+<div class="allpanel" id="allp" role="dialog" aria-modal="true" aria-label="All projects" inert>
+ <div class="allbar"><button class="back" id="allBack" type="button">&larr; Back</button><h2>All Projects</h2></div>
+ <div class="wrap"><div class="filters" id="filters" role="group" aria-label="Filter projects"></div><div class="gal" id="allGrid"></div></div>
+</div>
+<dialog id="lb"><button class="lb-close" aria-label="Close preview">&times;</button><button class="lb-nav lb-prev" aria-label="Previous photo">&#8249;</button><button class="lb-nav lb-next" aria-label="Next photo">&#8250;</button><img alt=""><p></p></dialog>
+
+<script>
+/* ===== CONFIG: fill these in. Leave a value empty to keep its placeholder. ===== */
+const CONFIG = {
+  PHONE: "+91 79070 69186",
+  WHATSAPP: "917907069186",
+  EMAIL: "",            // e.g. "info@yourdomain.com"
+  ADDRESS: "",          // full business address
+  WEB3FORMS_KEY: "",    // FREE: get a key at web3forms.com (enter your email, they send you the key). Every enquiry then arrives in your email automatically.
+  KEEP_AWAKE_URL: "self",   // your Render URL, e.g. "https://your-site.onrender.com/" (or "self" if this page is served by that same Render site)
+  SOCIAL: [{label: "WhatsApp", url: "https://wa.me/917907069186"}]
+};
+/* Existing project photos only. Add one entry per image already in assets/. */
+const PROJECTS = [{"src":"assets/projects/01-teal-l-shaped-modular-kitchen.jpg","title":"Teal L-Shaped Modular Kitchen","category":"Kitchens","pos":"50% 40%"},{"src":"assets/projects/02-tv-unit-with-fluted-panel-and-pooja-unit.jpg","title":"TV Unit with Fluted Panel and Pooja Unit","category":"TV and Pooja Units","pos":"50% 55%"},{"src":"assets/projects/03-teal-wardrobe-with-study-unit.jpg","title":"Teal Wardrobe with Study Unit","category":"Wardrobes","pos":"50% 40%"},{"src":"assets/projects/04-green-modular-kitchen-with-counter.jpg","title":"Green Modular Kitchen with Counter","category":"Kitchens","pos":"50% 40%"},{"src":"assets/projects/05-lilac-wardrobe-with-study-nook.jpg","title":"Lilac Wardrobe with Study Nook","category":"Wardrobes","pos":"50% 40%"},{"src":"assets/projects/06-tv-unit-with-led-backlight.jpg","title":"TV Unit with LED Backlight","category":"TV and Pooja Units","pos":"30% 50%"},{"src":"assets/projects/07-bar-counter-with-tile-roof-and-rope-lights.jpg","title":"Bar Counter with Tile Roof and Rope Lights","category":"Counters and Units","pos":"52% 50%"},{"src":"assets/projects/08-zigzag-two-tone-wardrobe.jpg","title":"Zigzag Two-Tone Wardrobe","category":"Wardrobes","pos":"70% 50%"},{"src":"assets/projects/09-pink-and-white-modular-kitchen.jpg","title":"Pink and White Modular Kitchen","category":"Kitchens","pos":"50% 40%"},{"src":"assets/projects/10-reception-counter-with-fluted-panels.jpg","title":"Reception Counter with Fluted Panels","category":"Counters and Units","pos":"55% 50%"},{"src":"assets/projects/11-white-wardrobe-with-glass-shutter.jpg","title":"White Wardrobe with Glass Shutter","category":"Wardrobes","pos":"50% 40%"},{"src":"assets/projects/12-laser-cut-pooja-unit.jpg","title":"Laser-Cut Pooja Unit","category":"TV and Pooja Units","pos":"50% 45%"},{"src":"assets/projects/13-two-tone-wardrobe-with-study-unit.jpg","title":"Two-Tone Wardrobe with Study Unit","category":"Wardrobes","pos":"50% 40%"},{"src":"assets/projects/14-walk-in-wardrobe-with-glass-shutters.jpg","title":"Walk-In Wardrobe with Glass Shutters","category":"Wardrobes","pos":"50% 45%"},{"src":"assets/projects/15-wardrobe-with-window-niche.jpg","title":"Wardrobe with Window Niche","category":"Wardrobes","pos":"50% 50%"},{"src":"assets/projects/16-counter-and-overhead-storage.jpg","title":"Counter and Overhead Storage","category":"Counters and Units","pos":"40% 50%"},{"src":"assets/projects/17-textured-wardrobe-with-glass-shutter.jpg","title":"Textured Wardrobe with Glass Shutter","category":"Wardrobes","pos":"50% 40%"},{"src":"assets/projects/18-glass-shutter-wardrobe-with-dressing-unit.jpg","title":"Glass Shutter Wardrobe with Dressing Unit","category":"Wardrobes","pos":"45% 45%"},{"src":"assets/projects/19-crockery-unit-with-glass-shutters.jpg","title":"Crockery Unit with Glass Shutters","category":"Counters and Units","pos":"50% 45%"},{"src":"assets/projects/20-tv-unit-with-pooja-cabinet.jpg","title":"TV Unit with Pooja Cabinet","category":"TV and Pooja Units","pos":"28% 50%"},{"src":"assets/projects/21-dressing-unit-with-mirror.jpg","title":"Dressing Unit with Mirror","category":"Counters and Units","pos":"50% 45%"}];
+
+const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const h1 = $(".hero h1");
+h1.setAttribute("aria-label", h1.textContent);
+h1.innerHTML = h1.textContent.trim().split(/\s+/).map((w, i) => `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(" ");
+let heroWatch = false;
+const watchHero = () => {
+  if (heroWatch) return; heroWatch = true;
+  const hero = $(".hero");
+  new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { if (!hero.classList.contains("go")) setTimeout(() => hero.classList.add("go"), 120); }
+    else hero.classList.remove("go");
+  }), {threshold: 0}).observe(hero);
+};
+const startHero = () => { $(".hero").classList.add("go"); watchHero(); };
+const start = () => { $("#loader").classList.add("done"); setTimeout(startHero, 350); };
+let started = false;
+const go = () => { if (!started) { started = true; start(); } };
+{ const hi = new Image(); hi.onload = hi.onerror = go; hi.src = "assets/hero-bg.jpg"; }
+setTimeout(go, 1200);  /* never keep visitors waiting on the spinner */
+setTimeout(startHero, 4000); /* safety: never leave text hidden */
+$("#yr").textContent = new Date().getFullYear();
+
+/* nav */
+const menu = $("#menu"), burger = $(".burger");
+burger.onclick = () => { const o = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", o); };
+$$("#menu a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+const links = $$("#menu a[href^='#']:not(.wa)");
+/* Why Choose Us background video: the file is fetched only when the section is near the screen */
+(() => {
+  const v = $("#why .bgvid"); if (!v) return;
+  v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
+  let visible = false, loaded = false;
+  const load = () => { if (loaded) return; loaded = true; v.src = "assets/why-bg.mp4"; v.load(); };
+  const tryPlay = () => { if (visible && v.paused) { const r = v.play(); if (r && r.catch) r.catch(() => {}); } };
+  new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) load(); }), {rootMargin: "900px 0px"}).observe($("#why"));
+  new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; if (visible) { load(); tryPlay(); } else v.pause(); }), {threshold: 0.05}).observe($("#why"));
+  v.addEventListener("canplay", tryPlay);
+  ["touchstart", "pointerdown", "scroll", "keydown"].forEach(ev => addEventListener(ev, tryPlay, {passive: true}));
+})();
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(l => l.classList.toggle("on", l.hash === "#" + e.target.id));
+}), {rootMargin:"-45% 0px -50% 0px"});
+$$("main section[id]").forEach(s => spy.observe(s));
+
+/* contact details */
+const c = CONFIG, wa = c.WHATSAPP.replace(/\D/g, "");
+const waLink = t => `https://wa.me/${wa}${t ? "?text=" + encodeURIComponent(t) : ""}`;
+if (c.SOCIAL.length) $("#social").innerHTML = c.SOCIAL.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a></li>`).join("");
+
+/* service "Learn more" preselects the enquiry form */
+$$("[data-svc]").forEach(a => a.addEventListener("click", () => { $("select[name=service]").value = a.dataset.svc; }));
+
+/* gallery + lightbox */
+const gal = $("#gallery"), allGrid = $("#allGrid"), lb = $("#lb"), fbar = $("#filters"), panel = $("#allp");
+const lbImg = $("img", lb), lbCap = $("p", lb);
+const FEATURED = PROJECTS.slice(0, 6);
+let shown = [], cur = 0;
+function showPhoto(i) {
+  cur = (i + shown.length) % shown.length;
+  const p = shown[cur];
+  lbImg.src = p.src; lbImg.alt = p.title; lbCap.textContent = `${p.title} | ${p.category}`;
+}
+function fill(box, list) {
+  box.replaceChildren();
+  list.forEach((p, i) => {
+    const b = document.createElement("button");
+    b.className = "shot"; b.type = "button"; b.setAttribute("aria-label", "View " + p.title);
+    const im = document.createElement("img");
+    im.src = p.src; im.alt = p.title; im.loading = "lazy"; im.decoding = "async"; im.style.objectPosition = p.pos || "50% 40%";
+    const cap = document.createElement("span"); cap.className = "cap";
+    const t = document.createElement("b"); t.textContent = p.title;
+    const c = document.createElement("small"); c.textContent = p.category;
+    cap.append(t, c); b.append(im, cap);
+    b.onclick = () => { shown = list; showPhoto(i); lb.showModal(); };
+    box.appendChild(b);
+  });
+}
+function renderAll(cat) {
+  fill(allGrid, PROJECTS.filter(p => cat === "All" || p.category === cat));
+  $$("button", fbar).forEach(x => x.setAttribute("aria-pressed", x.dataset.c === cat));
+}
+if (!PROJECTS.length) {
+  $("#viewAll").hidden = true;
+  gal.innerHTML = `<div class="empty"><h3>Project photographs coming soon</h3><p>Completed work will be shown here. Add your photos to the PROJECTS list in this file.</p></div>`;
+} else {
+  fill(gal, FEATURED);
+  if (PROJECTS.length <= FEATURED.length) $("#viewAll").hidden = true;
+  else $("#viewAll").textContent = `View All Projects (${PROJECTS.length})`;
+  ["All", ...new Set(PROJECTS.map(p => p.category))].forEach(cat => {
+    const f = document.createElement("button");
+    f.type = "button"; f.textContent = cat; f.dataset.c = cat;
+    f.onclick = () => renderAll(cat);
+    fbar.appendChild(f);
+  });
+  renderAll("All");
+}
+
+/* "All Projects" slide: opens as its own full-screen view */
+function openAll() { panel.removeAttribute("inert"); panel.classList.add("open"); document.body.style.overflow = "hidden"; panel.scrollTop = 0; $("#allBack").focus({preventScroll: true}); }
+function closeAll() { panel.classList.remove("open"); panel.setAttribute("inert", ""); document.body.style.overflow = ""; }
+function route() { if (location.hash === "#all-projects") openAll(); else if (panel.classList.contains("open")) closeAll(); }
+$("#viewAll").onclick = () => { location.hash = "all-projects"; };
+$("#allBack").onclick = () => { location.hash = "projects"; };
+addEventListener("hashchange", route);
+route();
+
+/* text and blocks slide in as you scroll */
+(() => {
+  const tag = (list, dir, step = 0, cols = 0) => list.forEach((el, i) => {
+    el.dataset.r = dir; el.style.setProperty("--d", ((cols ? i % cols : i) * step) + "ms");
+  });
+  tag($$(".head h2, .head .lead"), "up", 120);
+  tag($$(".about > div:first-child"), "left");
+  tag($$(".card"), "up", 130, 3);
+  tag($$("#gallery .shot"), "up", 110, 3);
+  tag($$(".morewrap"), "up");
+  tag($$(".why > div"), "up", 120, 3);
+  tag($$(".contact > div"), "left");
+  tag($$(".contact form"), "right");
+  tag($$(".foot > div"), "up", 100, 4);
+  /* slide in every time a block enters the screen, and reset once it has fully left so it can play again */
+  const show = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add("in");
+    clearTimeout(el._t);
+    el._t = setTimeout(() => el.classList.add("done"), 1200 + parseInt(el.style.getPropertyValue("--d") || 0));
+  }), {threshold: 0.15, rootMargin: "0px 0px -6% 0px"});
+  const reset = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) return;
+    const el = e.target;
+    clearTimeout(el._t); el.classList.remove("in", "done");
+  }), {threshold: 0});
+  $$("[data-r]").forEach(el => { show.observe(el); reset.observe(el); });
+})();
+
+/* full-size viewer */
+$(".lb-close", lb).onclick = () => lb.close();
+$(".lb-prev", lb).onclick = () => showPhoto(cur - 1);
+$(".lb-next", lb).onclick = () => showPhoto(cur + 1);
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+addEventListener("keydown", e => {
+  if (lb.open) { if (e.key === "ArrowLeft") showPhoto(cur - 1); if (e.key === "ArrowRight") showPhoto(cur + 1); }
+  else if (e.key === "Escape" && panel.classList.contains("open")) location.hash = "projects";
+});
+let tx = null;
+lb.addEventListener("touchstart", e => { tx = e.touches[0].clientX; }, {passive: true});
+lb.addEventListener("touchend", e => { if (tx === null) return; const d = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(d) > 50) showPhoto(cur + (d < 0 ? 1 : -1)); });
+
+/* enquiry form: opens WhatsApp with the enquiry message ready to send */
+/* service "Other" shows an extra box; address box with automatic or manual location */
+const svcSel = $("select[name=service]"), otherWrap = $("#otherWrap"), addr = $("#addr"), locBtn = $("#locBtn"), locStatus = $("#locStatus");
+let loc = null;
+function syncOther() { otherWrap.hidden = svcSel.value !== "Other"; if (!otherWrap.hidden) $("input[name=otherService]").focus({preventScroll: true}); }
+svcSel.addEventListener("change", syncOther);
+if (c.WEB3FORMS_KEY) { const n = $(".fnote"); if (n) n.textContent = "Your enquiry is sent to us directly. We will contact you soon."; }
+$("#form").addEventListener("reset", () => { loc = null; locStatus.textContent = ""; setTimeout(() => { otherWrap.hidden = true; }, 0); });
+addr.addEventListener("input", () => { if (!addr.value.trim()) { loc = null; locStatus.textContent = ""; } });
+locBtn.addEventListener("click", () => {
+  if (!navigator.geolocation) { locStatus.textContent = "Location is not available on this device. Please type your address."; return; }
+  locBtn.disabled = true; locStatus.textContent = "Getting your location...";
+  navigator.geolocation.getCurrentPosition(async pos => {
+    const la = pos.coords.latitude, lo = pos.coords.longitude;
+    loc = {la: la.toFixed(6), lo: lo.toFixed(6)};
+    let found = "";
+    try {
+      const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 8000);
+      const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=18&lat=${la}&lon=${lo}`, {signal: ctl.signal, headers: {Accept: "application/json"}});
+      clearTimeout(t);
+      if (r.ok) { const j = await r.json(); found = (j && j.display_name) || ""; }
+    } catch (err) {}
+    addr.value = found || `Near latitude ${loc.la}, longitude ${loc.lo}`;
+    locStatus.textContent = found ? "Location added. Please check the address and edit it if needed." : "We could not find the street name, so your map position was added. Please add your address details.";
+    locBtn.disabled = false;
+  }, err => {
+    locBtn.disabled = false;
+    locStatus.textContent = err.code === 1 ? "Location permission was blocked. Please allow it in your browser, or type your address." : err.code === 3 ? "Getting your location took too long. Please try again or type your address." : "Could not get your location. Please type your address.";
+  }, {enableHighAccuracy: true, timeout: 12000, maximumAge: 60000});
+});
+$("#form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, d = Object.fromEntries(new FormData(f)), m = $("#msg");
+  if (!d.name.trim() || !d.phone.trim() || !d.message.trim()) {
+    m.style.color = "#e8a0a0";
+    m.textContent = "Please enter your name, phone number and message.";
+    return;
+  }
+  if (d.service === "Other" && !(d.otherService || "").trim()) {
+    m.style.color = "#e8a0a0";
+    m.textContent = "Please tell us which service you need.";
+    return;
+  }
+
+  const service = d.service === "Other" ? "Other: " + d.otherService.trim() : d.service;
+  const address = (d.address || "").trim();
+  const enquiry = `New enquiry\nName: ${d.name}\nPhone: ${d.phone}\nEmail: ${d.email || "-"}\nService: ${service}` +
+    (address ? `\nAddress: ${address}` : "") +
+    (loc && address ? `\nMap: https://www.google.com/maps?q=${loc.la},${loc.lo}` : "") +
+    `\nMessage: ${d.message}`;
+
+  if (!wa) {
+    m.style.color = "#e8a0a0";
+    m.textContent = "WhatsApp is not configured. Please contact us directly.";
+    return;
+  }
+
+  const whatsappUrl = waLink(enquiry);
+  const whatsappWindow = window.open(whatsappUrl, "_blank");
+
+  if (c.WEB3FORMS_KEY) {
+    const btn = f.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    m.style.color = "var(--mute)";
+    m.textContent = "Opening WhatsApp and sending your enquiry details...";
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {"Content-Type": "application/json", Accept: "application/json"},
+        body: JSON.stringify({
+          access_key: c.WEB3FORMS_KEY,
+          subject: "New website enquiry: " + service,
+          from_name: "AJS Aluminium Interiors Website",
+          name: d.name,
+          phone: d.phone,
+          email: d.email || undefined,
+          service,
+          address: address || "-",
+          map: loc && address ? `https://www.google.com/maps?q=${loc.la},${loc.lo}` : "-",
+          message: d.message
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result.success) throw new Error("send");
+      f.reset();
+      btn.disabled = false;
+      m.style.color = "var(--text)";
+      m.innerHTML = `<div class="sent"><p><strong style="color:var(--gold)">Your enquiry is ready in WhatsApp.</strong> Please review the message and tap <strong>Send</strong>.</p><div class="sentbtns"><a class="btn fill" href="${whatsappUrl}" target="_blank" rel="noopener">Open WhatsApp</a></div></div>`;
+      return;
+    } catch (err) {
+      btn.disabled = false;
+      m.style.color = "#e8a0a0";
+      m.textContent = "Your enquiry could not be emailed, but you can still send it using WhatsApp.";
+    }
+  }
+
+  if (!whatsappWindow) {
+    m.style.color = "var(--text)";
+    m.innerHTML = `<div class="sent"><p><strong style="color:var(--gold)">Your enquiry is ready.</strong> Tap below to open WhatsApp, review the message and tap <strong>Send</strong>.</p><div class="sentbtns"><a class="btn fill" href="${whatsappUrl}" target="_blank" rel="noopener">Open WhatsApp</a></div></div>`;
+  } else {
+    m.style.color = "var(--gold)";
+    m.textContent = "WhatsApp is opening with your enquiry. Please review it and tap Send.";
+  }
+  f.reset();
+});
+
+/* keep the Render server awake while the page is open (optional): sends a tiny request every 10 seconds */
+(() => {
+  let u = (CONFIG.KEEP_AWAKE_URL || "").trim();
+  if (!u) return;
+  if (u === "self") u = location.origin + "/";
+  if (!/^https?:\/\//i.test(u)) return;
+  const ping = () => {
+    if (document.hidden) return;                       /* no pings from background tabs */
+    fetch(u, {method: "HEAD", mode: "no-cors", cache: "no-store", keepalive: true}).catch(() => {});  /* HEAD = headers only, no page download */
+  };
+  ping();
+  setInterval(ping, 10000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) ping(); });
+})();
+</script>
+</body>
+</html>
